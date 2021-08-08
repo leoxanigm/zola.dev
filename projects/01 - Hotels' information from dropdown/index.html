@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>MyHotels | Make your next vacation unforgettable</title>
+	<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+	<main>
+		<section class="main-container">
+			<section class="selection-container col-flex">
+				<p>Select a hotel from the list to see more details.</p>
+				<form action="">
+					<select name="select-hotel" id="hotel-selection" onchange="getOption();">
+						<option value="" disabled="" selected="">--Select a hotel--</option>
+						<option value="hotel-1">Château d'Ouchy</option>
+						<option value="hotel-2">Beau-Rivage Palace</option>
+						<option value="hotel-3">Lausanne Palace</option>
+					</select>
+				</form>
+			</section>
+			<section class="details-container col-flex">
+				<div class="welcome">
+					<p>Welcome!</p>
+				</div>
+				<div class="hotel-details">
+					<section class="top-details">
+						<div class="main-details">
+							<h1 id=hotel-name></h1>
+							<p id="hotel-location">Laiss</p>
+						</div>
+						<div class="image">
+							<img src="" alt="" id="hotel-img">
+						</div>
+					</section>
+					<section class="bottom-details">
+						<div class="table-container">
+							<table>
+								<tbody>
+									<tr>
+										<td>No of Rooms</td>
+										<td id="rooms"></td>
+									</tr>
+									<tr>
+										<td>Available Rooms</td>
+										<td id="avail-rooms"></td>
+									</tr>
+									<tr>
+										<td>Stars</td>
+										<td id="stars"></td>
+									</tr>
+									<tr>
+										<td>Lake View</td>
+										<td id="lake-view"></td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+					</section>
+				</div>
+			</section>
+		</section>
+	</main>
+	<footer>
+		<em>Disclaimer:</em> The information provided here might not be accurate, it is for educational purposes only.
+	</footer>
+
+
+<script src="scripts.js"></script>
+</body>
+</html>

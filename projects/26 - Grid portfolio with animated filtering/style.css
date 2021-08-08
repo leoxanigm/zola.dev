@@ -1,0 +1,40 @@
+.selector {
+  width: 600px;
+  display: flex;
+  list-style: none;
+  justify-content: space-between;
+  background: teal;
+  color: #fff;
+}
+
+.container {
+  width: 900px;
+  height: auto;
+  position: relative;
+}
+
+.block {
+  width: 300px;
+  height: 200px;
+  background: steelblue;
+}
+
+.section2 {
+  background: orange;
+}
+
+.section3 {
+  background: cyan;
+}
+
+.block {
+  /* float: left; */
+  /* display: inline-block; */
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  opacity: 1;
+  transform-origin: center;
+  transition-property: transform, opacity, scale;
+  transition-duration: 1s;
+}

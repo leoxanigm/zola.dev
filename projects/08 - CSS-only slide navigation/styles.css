@@ -1,0 +1,91 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+body {
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+main {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    width: 420px;
+    height: 400px;
+    background: #eee;
+    border: none;
+    border-radius: 5%;
+    box-shadow: 0 0 4px 2px rgba(0, 0, 0,.15);
+}
+.container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    overflow: hidden;
+    border: none;
+    border-radius: 5%;
+}
+input {
+    display: none;
+}
+label {
+    font-size: .9em;
+    font-weight: bold;
+    width: 140px;
+    height: 50px;
+    background: #ccc;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    border-right: 1px solid #aaa;
+    transition-property: background, color;
+    transition-duration: 250ms;
+}
+label:last-child {
+    border: none;
+}
+label:hover {
+    color: #fff;
+    background: #aaa;
+}
+input[value="1"]:checked ~ label[for="1"], input[value="2"]:checked ~ label[for="2"], input[value="3"]:checked ~ label[for="3"] {
+    color: #fff;
+    background: #aaa;
+}
+.container div {
+    position: absolute;
+    top: 50px;
+    width: 420px;
+    height: 350px;
+    transition-property: transform;
+    transition-duration: 350ms;
+}
+#slide1 {
+    background: #5588a3;
+    transform: translateX(-420px);
+    z-index: 1;
+}
+#slide2 {
+    background: #145374;
+}
+#slide3 {
+    background: #00334e;
+    transform: translateX(420px);
+}
+input[value="1"]:checked ~ #slide1 {
+    transform: translateX(0px);
+}
+input[value="3"]:checked ~ #slide3 {
+    transform: translateX(0px);
+}
+p {
+    color: #eee;
+    font-size: 2em;
+    text-align: center;
+    margin-top: 150px;
+}
