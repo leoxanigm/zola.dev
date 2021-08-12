@@ -321,6 +321,10 @@ main h2 {
   align-items: center;
 }
 
+.project-list .project:hover .project-desc {
+  transform: translateY(-50px);
+}
+
 .project-list .project-desc h3 {
   color: var(--txt-main);
   background: var(--bg-5);
@@ -340,24 +344,26 @@ main h2 {
 }
 
 .project-list .desc {
-  width: 70%;
-  height: 60px;
+  width: 60%;
+  height: 0px;
   margin: 0.5em auto;
   overflow: hidden;
+  opacity: 0;
 
-  transition: height 300ms;
+  transition: height 300ms, opacity 300ms;
 
   text-align: center;
-  color: var(--txt-main);
-  text-shadow: 1px 1px var(--bg-5), 1px 1px 2px var(--bg-3-a), 1px 1px 4px var(--bg-2);
-}
-
-.project-list .project:hover .project-desc {
-  transform: translateY(-50px);
+  /* color: var(--txt-main); */
+  color: var(--bg-2);
+  font-weight: 600;
+  /* text-shadow: 1px 1px var(--txt-4), 1px 1px 2px var(--txt-3),
+    1px 1px 4px var(--txt-4); */
+  text-shadow: 1px 1px 8px var(--txt-4);
 }
 
 .project-list .project:hover .desc {
-  height: 60px;
+  height: 100px;
+  opacity: 1;
 }
 
 .project-list .project-tech-stacks li {
