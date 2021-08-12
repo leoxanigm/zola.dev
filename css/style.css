@@ -311,13 +311,62 @@ main h2 {
 
 .project-list .project-desc {
   position: absolute;
-  align-self: end;
-  width: 100%;
-  height: 50%;
-  padding-top: 0.5em;
+  top: 50%;
+  transform: translateY(-15px);
+  transition: transform 300ms;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.project-list .project-desc h3 {
+  color: var(--txt-main);
+  background: var(--bg-5);
+
+  display: inline-block;
+  padding: 0.25em 1em;
+  border-radius: 2px;
+}
+
+.project-list .project .project-img {
+  transform: scale(1);
+  transition: transform 300ms;
+}
+
+.project-list .project:hover .project-img {
+  transform: scale(1.01);
+}
+
+.project-list .desc {
+  width: 70%;
+  height: 60px;
+  margin: 0.5em auto;
+  overflow: hidden;
+
+  transition: height 300ms;
+
   text-align: center;
-  color: var(--bg-main);
-  background-color: var(--bg-5-a);
+  color: var(--txt-main);
+  text-shadow: 1px 1px var(--bg-5), 1px 1px 2px var(--bg-3-a), 1px 1px 4px var(--bg-2);
+}
+
+.project-list .project:hover .project-desc {
+  transform: translateY(-50px);
+}
+
+.project-list .project:hover .desc {
+  height: 60px;
+}
+
+.project-list .project-tech-stacks li {
+  color: var(--red-1);
+  font-size: 0.9em;
+  background: var(--bg-main);
+  margin: 0.15em auto;
+  padding: 0.2em 0em;
+  width: 50%;
 }
 
 @media (max-width: 890px) {
