@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./img/favicon-32x32.png"
+    />
+
+    <title>Frontend Mentor | Rock, Paper, Scissors</title>
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="style.css" />
+
+    <body>
+      <main>
+        <div class="game-container">
+          <section id="game-header">
+            <div class="logo"></div>
+            <div id="plays">
+              <p>Plays</p>
+              <p class="plays">0</p>
+            </div>
+            <div id="score">
+              <p>Score</p>
+              <p class="score">0</p>
+            </div>
+          </section>
+          <section id="game" class="">
+            <div id="paper" data-role="paper" class="game-el"></div>
+            <div id="scissor" data-role="scissor" class="game-el"></div>
+            <div id="rock" data-role="rock" class="game-el"></div>
+            <div class="outcome-container">
+              <p id="outcome">You win</p>
+              <button class="btn" id="play-again">Play Again</button>
+            </div>
+            <div id="house"></div>
+          </section>
+          <section id="rules"></section>
+        </div>
+      </main>
+
+      <script src="app.js"></script>
+    </body>
+
+    <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+    <style>
+      .attribution {
+        font-size: 11px;
+        text-align: center;
+      }
+      .attribution a {
+        color: hsl(228, 45%, 44%);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="attribution">
+      Challenge by
+      <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
+        >Frontend Mentor</a
+      >. Coded by <a href="https://github.com/leoxanigm">Zelalem Alemu</a>.
+    </div>
+  </body>
+</html>

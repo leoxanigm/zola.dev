@@ -1,0 +1,356 @@
+/* To do */
+/* 
+- Make the game mobile responsive
+- Add animations
+*/
+
+
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --scissors-gradient: linear-gradient(
+    90deg,
+    hsl(39, 89%, 49%),
+    hsl(40, 84%, 53%)
+  );
+  --paper-gradient: linear-gradient(
+    90deg,
+    hsl(230, 89%, 62%),
+    hsl(230, 89%, 65%)
+  );
+  --rock-gradient: linear-gradient(
+    90deg,
+    hsl(349, 71%, 52%),
+    hsl(349, 70%, 56%)
+  );
+  --cyan: linear-gradient(90deg, hsl(189, 59%, 53%), hsl(189, 58%, 57%));
+  --dark-text: hsl(229, 25%, 31%);
+  --score-text: hsl(229, 64%, 46%);
+  --header-outline: hsl(217, 16%, 45%);
+  --radial-gradient: radial-gradient(hsl(214, 47%, 23%), hsl(237, 49%, 15%));
+  --white: hsl(250, 100%, 100%);
+  --dark-background: hsl(224, 46%, 17%);
+}
+
+body {
+  color: var(--white);
+  font-family: 'Barlow Semi Condensed', Verdana, sans-serif;
+  font-weight: 600;
+  font-size: 16px;
+  letter-spacing: 0.125rem;
+
+  min-width: 100vw;
+  min-height: 100vh;
+
+  background-image: var(--radial-gradient);
+  background-repeat: no-repeat;
+}
+
+.btn,
+.btn:hover,
+.btn:active,
+.btn:focus {
+  letter-spacing: 0.125rem;
+
+  border: none;
+  background: none;
+  outline: none;
+
+  cursor: pointer;
+}
+
+.game-container {
+  padding: 2rem;
+}
+
+/* game header start */
+
+#game-header {
+  max-width: 575px;
+  padding: 1rem;
+  margin: 0 auto;
+  border: 0.175rem solid var(--header-outline);
+  border-radius: 0.65rem;
+
+  display: flex;
+  justify-content: flex-start;
+}
+
+#game-header .logo {
+  width: calc(162px * 0.75);
+  height: calc(99px * 0.75);
+  margin-right: auto;
+  background-image: url('img/logo.svg');
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+#game-header #plays,
+#game-header #score {
+  color: var(--score-text);
+  font-size: 0.75rem;
+  text-transform: uppercase;
+
+  background: var(--white);
+  padding: 0.5rem 1.5rem;
+  margin-left: 0.75rem;
+  border-radius: 0.35rem;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+#game-header #plays {
+  color: var(--white);
+  border: 1px solid var(--white);
+  background: none;
+}
+
+#game-header #plays .plays,
+#game-header #score .score {
+  color: var(--dark-text);
+  font-size: 2.5rem;
+  font-weight: 700;
+}
+
+#game-header #plays .plays {
+  color: var(--white);
+}
+
+/* game header end */
+
+/* game body start */
+
+/* game state - start */
+
+#game {
+  width: 20rem;
+  height: 20rem;
+  margin: 3rem auto;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  position: relative;
+}
+
+#game::before {
+  content: '';
+  position: absolute;
+
+  width: 100%;
+  height: 100%;
+  background-image: url('img/bg-triangle.svg');
+  background-repeat: no-repeat;
+  background-size: 15rem auto;
+  background-position: center;
+}
+
+#game .game-el {
+  width: 8.5rem;
+  height: 8.5rem;
+  border-radius: 50%;
+
+  background-image: var(--paper-gradient);
+  box-shadow: inset 0 0.35rem 0 0 hsl(230, 89%, 59%);
+
+  position: relative;
+  transform: rotate(180deg);
+
+  z-index: 1;
+  cursor: pointer;
+}
+
+#game .game-el::before {
+  content: '';
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+
+  width: 6.5rem;
+  height: 6.5rem;
+
+  background-color: var(--white);
+  background-image: url('img/icon-paper.svg');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 2.75rem auto;
+  border-radius: 50%;
+
+  box-shadow: inset 0 0.35rem 0 0 rgba(125, 125, 125, 0.3);
+
+  transform: rotate(-180deg);
+  transition: background 250ms;
+
+  z-index: 2;
+}
+
+#game [data-role="paper"] {
+  margin-right: 1.5rem;
+  background-image: var(--paper-gradient);
+  box-shadow: inset 0 0.35rem 0 0 hsl(230, 89%, 59%);
+}
+
+#game [data-role="paper"]::before {
+  background-image: url('img/icon-paper.svg');
+}
+
+#game [data-role="scissor"] {
+  margin-left: 1.5rem;
+  background-image: var(--scissors-gradient);
+  box-shadow: inset 0 0.35rem 0 0 hsl(35, 95%, 44%);
+}
+
+#game [data-role="scissor"]::before {
+  background-image: url('img/icon-scissors.svg');
+}
+
+#game [data-role="rock"] {
+  background-image: var(--rock-gradient);
+  box-shadow: inset 0 0.35rem 0 0 hsl(340, 65%, 40%);
+}
+
+#game [data-role="rock"]::before {
+  background-image: url('img/icon-rock.svg');
+}
+
+#game .game-el:hover::before {
+  background-size: 2.9rem auto;
+}
+
+#game .outcome-container {
+  display: none;
+}
+
+#game #house {
+  display: none;
+}
+
+/* game state - play */
+
+#game.play {
+  width: 32rem;
+  height: 12rem;
+  margin: 6rem auto 4rem;
+
+  align-items: center;
+}
+
+#game.play::before {
+  content: none;
+}
+
+#game.play .game-el {
+  display: none;
+
+  width: 12rem;
+  height: 12rem;
+  margin: 0;
+
+  cursor: default;
+}
+
+#game.play .game-el::before {
+  top: 1.5rem;
+  left: 1.5rem;
+
+  width: 9rem;
+  height: 9rem;
+
+  background-size: 3.75rem auto;
+
+  transition: none;
+}
+
+#game.play .game-el.selected-player {
+  display: block;
+  margin-right: 2rem;
+  order: 1;
+}
+
+#game.play .game-el.selected-house {
+  display: block;
+  order: 3;
+}
+
+#game.play .game-el.selected-house::after,
+#game.play .game-el.selected-player::after,
+#game.play #house::before {
+  content: 'You picked';
+  position: absolute;
+  top: 15rem;
+  left: 0rem;
+
+  width: 100%;
+
+  text-transform: uppercase;
+  text-align: center;
+
+  transform: rotate(-180deg);
+}
+
+#game.play .game-el.selected-house {
+  margin-left: 2rem;
+  position: relative;
+}
+
+#game.play #house {
+  /* display: block; */
+
+  width: 10rem;
+  height: 10rem;
+  border-radius: 50%;
+  margin-left: 2rem;
+
+  background-color: var(--dark-background);
+
+  order: 3;
+  position: relative;
+}
+
+#game.play .game-el.selected-house::after,
+#game.play #house::before {
+  content: 'The house picked';
+}
+
+#game.play #house::before {
+  top: -5rem;
+  transform: initial;
+}
+
+/* game state - outcome */
+
+#game.play.outcome {
+  width: 37rem;
+}
+
+#game.play.outcome .outcome-container {
+  text-align: center;
+  display: block;
+  order: 2;
+}
+
+#game.play.outcome #outcome {
+  font-size: 2rem;
+  text-transform: uppercase;
+}
+
+#game.play.outcome #play-again {
+  color: var(--score-text);
+  font-size: 0.7rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  /* letter-spacing: 0.25rem; */
+
+  background: var(--white);
+  padding: 0.5rem 1.65rem;
+  margin-top: 0.5rem;
+  border-radius: 0.25rem;
+}
+/* game body end */
