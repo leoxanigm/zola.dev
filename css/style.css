@@ -89,6 +89,10 @@ ul {
   list-style: none;
 }
 
+img {
+  display: block;
+}
+
 .btn {
   padding: 0.25em 1.25em;
   /* border-radius: 0.2em; */
@@ -161,6 +165,10 @@ ul {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.header-img-container img {
+  width: 210px;
 }
 
 .header-img::before {
