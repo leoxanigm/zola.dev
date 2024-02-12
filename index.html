@@ -10,48 +10,38 @@
   </head>
   <body>
     <header>
-      <nav class="main-navigation">
-        <ul>
-          <li class="btn-resume-container">
-            <a
-              class="btn btn-resume"
-              href="/assets/resume/Zelalem_Alemu_CV.pdf"
-              target="_blank"
-              >Resume</a
-            >
-          </li>
-          <!-- <li><a href="#">Blog</a></li> -->
-        </ul>
-      </nav>
       <section class="welcome-header">
         <div class="header-about">
           <p class="greeting">Hello and welcome,</p>
           <h1>My name is Zelalem Alemu (Zola)</h1>
           <p class="about-title">
-            I am a front-end web developer living in Vaud, Switzerland
+            I am a software developer living in Vaud, Switzerland
           </p>
-        </div>
-        <div class="header-img">
-          <div class="header-img-container">
-            <img src="assets/img/profile_20210815.jpg" alt="Zelalem Alemu" />
-          </div>
         </div>
         <div class="header-skills">
           <p>Skills:</p>
           <ul class="skills">
             <li class="main-skill">
-              <span>JavaScript</span>
+              <span>Python</span>
               <ul>
-                <li class="sub-skill">React</li>
-                <li class="sub-skill">jQuery</li>
-                <li class="sub-skill">p5.js</li>
+                <li class="sub-skill">Django</li>
+                <li class="sub-skill">Pandas</li>
+                <li class="sub-skill">Numpy</li>
+                <li class="sub-skill">PyTorch</li>
               </ul>
             </li>
             <li class="main-skill">
-              <span>HTML</span>
+              <span>JavaScript</span>
               <ul>
-                <li class="sub-skill">pug</li>
+                <li class="sub-skill">React</li>
+                <li class="sub-skill">Nodejs</li>
               </ul>
+            </li>
+            <li class="main-skill">
+              <span>MySQL</span>
+            </li>
+            <li class="main-skill">
+              <span>HTML</span>
             </li>
             <li class="main-skill">
               <span>CSS</span>
@@ -71,87 +61,62 @@
     <main>
       <h2>Projects</h2>
       <section class="project-list">
-        <a href="projects/postman/" class="project" target="_project">
-          <div class="project-parent-rotate">
-            <div class="project-container">
-              <div class="project-img">
-                <img src="projects/postman/screen/postman.jpg" alt="PostMan" />
-              </div>
-              <div class="project-desc">
-                <h3>PostMan</h3>
-                <p class="desc">Programming course final game project</p>
-              </div>
-            </div>
+        <div class="project">
+          <h3>
+            Genetic Algorithms for Advancing the Form and Control of
+            Multipurpose Robotic Hands
+          </h3>
+          <div class="techstack">
+            <span>Python</span>
+            <span>Pandas</span>
+            <span>PyTorch</span>
+            <span>PyBullet</span>
           </div>
-        </a>
-        <a href="projects/job-listings-with-filtering/" class="project" target="_project">
-          <div class="project-parent-rotate">
-            <div class="project-container">
-              <div class="project-img">
-                <img
-                  src="projects/job-listings-with-filtering/screen/job-listings.jpg"
-                  alt="Job List with Filtering"
-                />
-              </div>
-              <div class="project-desc">
-                <h3>Job List</h3>
-                <p class="desc">
-                  Job List with JavaScript filtering exercise project.
-                  Frontendmentor <br />
-                  challenge.
-                </p>
-              </div>
-            </div>
+          <iframe
+            width="560"
+            height="315"
+            src="https://www.youtube-nocookie.com/embed/E1rdxzH9EN8?si=0lVA7acEEmfCTjEO"
+            title="YouTube video player"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            allowfullscreen
+          ></iframe>
+        </div>
+        <div class="project">
+          <h3>espace Social Network</h3>
+          <div class="techstack">
+            <span>Python</span>
+            <span>Django</span>
+            <span>celery</span>
+            <span>JavaScript</span>
           </div>
-        </a>
-        <a href="projects/rock-paper-scissors-game/" class="project" target="_project">
-          <div class="project-parent-rotate">
-            <div class="project-container">
-              <div class="project-img">
-                <img
-                  src="projects/rock-paper-scissors-game/screen/rock-paper-scissors.jpg"
-                  alt="Rock-Paper_Scissors game"
-                />
-              </div>
-              <div class="project-desc">
-                <h3>Rock-Paper-Scissors</h3>
-                <p class="desc">
-                  Rock-Paper-Scissors game. Frontendmentor <br />
-                  challenge.
-                </p>
-              </div>
-            </div>
+          <iframe
+            width="560"
+            height="315"
+            src="https://www.youtube-nocookie.com/embed/AZ2KUK0ti8o?si=dduGXZJiks0vCjSI"
+            title="YouTube video player"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            allowfullscreen
+          ></iframe>
+        </div>
+        <div class="project">
+          <h3>REST API for Protein Sequence Retrieval and Analysis</h3>
+          <div class="techstack">
+            <span>Python</span>
+            <span>Django</span>
+            <span>Django REST Framework</span>
           </div>
-        </a>
-        <a href="projects/tetris/" class="project" target="_project">
-          <div class="project-parent-rotate">
-            <div class="project-container">
-              <div class="project-img">
-                <img src="projects/tetris/screen/tetris.jpg" alt="Tetris" />
-              </div>
-              <div class="project-desc">
-                <h3>Tetris</h3>
-                <p class="desc">JavaScript Tetris game</p>
-              </div>
-            </div>
-          </div>
-        </a>
-        <a href="projects/myhotels/" class="project" target="_project">
-          <div class="project-parent-rotate">
-            <div class="project-container">
-              <div class="project-img">
-                <img
-                  src="projects/myhotels/screen/myhotels.jpg"
-                  alt="MyHotels"
-                />
-              </div>
-              <div class="project-desc">
-                <h3>MyHotels</h3>
-                <p class="desc">First JavaScript DOM manipulation project</p>
-              </div>
-            </div>
-          </div>
-        </a>
+          <iframe
+            width="560"
+            height="315"
+            src="https://www.youtube-nocookie.com/embed/nIacFziqpZE?si=R9MSfn4rBLFvY9FB"
+            title="YouTube video player"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            allowfullscreen
+          ></iframe>
+        </div>
       </section>
     </main>
     <footer>
@@ -166,9 +131,7 @@
         </li>
         <li>
           LinkedIn:
-          <a href="https://www.linkedin.com/in/zelalem-alemu/"
-            >Zelalem Alemu</a
-          >
+          <a href="https://www.linkedin.com/in/zelalem-alemu/">Zelalem Alemu</a>
         </li>
       </ul>
     </footer>
